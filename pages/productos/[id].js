@@ -30,6 +30,12 @@ const CreadorProducto = styled.p`
   text-align: center;
 `;
 
+const ImagenProducto = styled.img`
+  height: auto;
+  border-radius: 8px;
+  max-width: 100%;
+`;
+
 const Producto = (props) => {
 
   //State componente
@@ -228,7 +234,7 @@ const Producto = (props) => {
               <div>
                 <p>Publicado hace: {formatDistanceToNow(new Date(creado), {locale: es})}</p>
                 <p>Por {creador.nombre} de {empresa}</p>
-                <img src={urlImagen} alt={descripcion}/>
+                <ImagenProducto src={urlImagen} alt={descripcion} />
                 <p>{descripcion}</p>
 
                 { usuario && (
