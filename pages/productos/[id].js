@@ -74,7 +74,7 @@ const Producto = (props) => {
 
     }
  
-  }, [id]);
+  }, [id, consultarDB]);
 
   const { comentarios, creado, descripcion, empresa, nombre, url, urlImagen, votos, creador, haVotado } = producto;
 
