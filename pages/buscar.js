@@ -16,14 +16,16 @@ export default function Buscar() {
 
   useEffect( () => {
 
-    const busqueda = q.toLocaleLowerCase();
-    const filtro = productos.filter(producto => {
-      return (
-        producto.nombre.toLocaleLowerCase().includes(busqueda) ||
-        producto.descripcion.toLocaleLowerCase().includes(busqueda) 
-      );
-    })
-    guardarResultado(filtro);
+    if(q) {
+      const busqueda = q.toLocaleLowerCase();
+      const filtro = productos.filter(producto => {
+        return (
+          producto.nombre.toLocaleLowerCase().includes(busqueda) ||
+          producto.descripcion.toLocaleLowerCase().includes(busqueda) 
+        );
+      })
+      guardarResultado(filtro);
+    }
 
   }, [q, productos]);
 
